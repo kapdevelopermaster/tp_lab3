@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\TrainingData.cs" />
+    <Compile Include="Models\TrainingModel.cs" />
+    <Compile Include="Models\RateData.cs" />
+    <Compile Include="Models\RateModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\DataView.cs">
