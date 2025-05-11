@@ -31,11 +31,19 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+
+            this.btnLoadTrainingFile = new System.Windows.Forms.Button();
+            this.dataTrainingGridView = new System.Windows.Forms.DataGridView();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTrainingGridView)).BeginInit();
+
             this.btnLoadRateFile = new System.Windows.Forms.Button();
             this.dataRateGridView = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataRateGridView)).BeginInit();
+
             this.SuspendLayout();
             // 
             // tabControl
@@ -51,6 +59,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataTrainingGridView);
+            this.tabPage1.Controls.Add(this.btnLoadTrainingFile);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -70,6 +80,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Данные курса валют";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadTrainingFile
+            // 
+            this.btnLoadTrainingFile.Location = new System.Drawing.Point(8, 6);
+            this.btnLoadTrainingFile.Name = "btnLoadTrainingFile";
+            this.btnLoadTrainingFile.Size = new System.Drawing.Size(172, 23);
+            this.btnLoadTrainingFile.TabIndex = 5;
+            this.btnLoadTrainingFile.Text = "Загрузить файл тренировок";
+            this.btnLoadTrainingFile.UseVisualStyleBackColor = true;
+            this.btnLoadTrainingFile.Click += new System.EventHandler(this.btnLoadTrainingFile_Click);
+            // 
+            // dataTrainingGridView
+            // 
+            this.dataTrainingGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataTrainingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataTrainingGridView.Location = new System.Drawing.Point(8, 35);
+            this.dataTrainingGridView.Name = "dataTrainingGridView";
+            this.dataTrainingGridView.Size = new System.Drawing.Size(829, 216);
+            this.dataTrainingGridView.TabIndex = 6;
             // 
             // btnLoadRateFile
             // 
@@ -100,6 +130,8 @@
             this.Name = "DataView";
             this.Text = "DataView";
             this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataTrainingGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataRateGridView)).EndInit();
             this.ResumeLayout(false);
@@ -110,6 +142,8 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataTrainingGridView;
+        private System.Windows.Forms.Button btnLoadTrainingFile;
         private System.Windows.Forms.DataGridView dataRateGridView;
         private System.Windows.Forms.Button btnLoadRateFile;
     }

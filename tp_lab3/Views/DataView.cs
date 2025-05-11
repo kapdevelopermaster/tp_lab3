@@ -13,6 +13,9 @@ namespace tp_lab3.Views
 {
     public partial class DataView : Form
     {
+        private readonly TrainingModel trainingModel;
+        private List<TrainingData> trainingData;
+        
         private readonly RateModel rateModel;
         private List<RateData> rateData;
 
@@ -20,9 +23,15 @@ namespace tp_lab3.Views
         {
             InitializeComponent();
 
+            trainingModel = new TrainingModel();
             rateModel = new RateModel();
         }
-
+        
+        public void DisplayTrainingData(List<TrainingData> data)
+        {
+            dataTrainingGridView.DataSource = data;
+        }
+        
         public void DisplayRateData(List<RateData> data)
         {
             dataRateGridView.DataSource = data;
@@ -42,11 +51,14 @@ namespace tp_lab3.Views
         }
 
         // Обработчики событий кнопок
+        private void btnLoadTrainingFile_Click(object sender, EventArgs e)
         private void btnLoadRateFile_Click(object sender, EventArgs e)
         {
             string filePath = GetFilePath();
             if (filePath != null)
             {
+                trainingData = trainingModel.LoadData(filePath);
+                DisplayTrainingData(trainingData);
                 rateData = rateModel.LoadData(filePath);
                 DisplayRateData(rateData);
             }
