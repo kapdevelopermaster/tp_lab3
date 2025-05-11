@@ -31,7 +31,11 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnLoadRateFile = new System.Windows.Forms.Button();
+            this.dataRateGridView = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRateGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -57,6 +61,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataRateGridView);
+            this.tabPage2.Controls.Add(this.btnLoadRateFile);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -64,6 +70,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Данные курса валют";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadRateFile
+            // 
+            this.btnLoadRateFile.Location = new System.Drawing.Point(8, 6);
+            this.btnLoadRateFile.Name = "btnLoadRateFile";
+            this.btnLoadRateFile.Size = new System.Drawing.Size(172, 23);
+            this.btnLoadRateFile.TabIndex = 6;
+            this.btnLoadRateFile.Text = "Загрузить файл курса валют";
+            this.btnLoadRateFile.UseVisualStyleBackColor = true;
+            this.btnLoadRateFile.Click += new System.EventHandler(this.btnLoadRateFile_Click);
+            // 
+            // dataRateGridView
+            // 
+            this.dataRateGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataRateGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRateGridView.Location = new System.Drawing.Point(9, 35);
+            this.dataRateGridView.Name = "dataRateGridView";
+            this.dataRateGridView.Size = new System.Drawing.Size(861, 200);
+            this.dataRateGridView.TabIndex = 7;
             // 
             // DataView
             // 
@@ -74,6 +100,8 @@
             this.Name = "DataView";
             this.Text = "DataView";
             this.tabControl.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataRateGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,5 +110,7 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataRateGridView;
+        private System.Windows.Forms.Button btnLoadRateFile;
     }
 }
