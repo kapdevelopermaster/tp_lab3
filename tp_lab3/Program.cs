@@ -1,4 +1,5 @@
-﻿using System;
+﻿using tp_lab3.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,12 @@ namespace tp_lab3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+
+            // Создание формы
+            var view = new DataView();
+
+            // Запуск формы
+            Application.Run(view);
         }
     }
 }
