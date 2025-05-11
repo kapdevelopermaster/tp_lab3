@@ -13,9 +13,42 @@ namespace tp_lab3.Views
 {
     public partial class DataView : Form
     {
+        private readonly TrainingModel trainingModel;
+        private List<TrainingData> trainingData;
+
         public DataView()
         {
             InitializeComponent();
+
+            trainingModel = new TrainingModel();
+        }
+        public void DisplayTrainingData(List<TrainingData> data)
+        {
+            dataTrainingGridView.DataSource = data;
+        }
+
+        public string GetFilePath()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    return openFileDialog.FileName;
+                }
+            }
+            return null;
+        }
+
+        // Обработчики событий кнопок
+        private void btnLoadTrainingFile_Click(object sender, EventArgs e)
+        {
+            string filePath = GetFilePath();
+            if (filePath != null)
+            {
+                trainingData = trainingModel.LoadData(filePath);
+                DisplayTrainingData(trainingData);
+            }
         }
 
     }
