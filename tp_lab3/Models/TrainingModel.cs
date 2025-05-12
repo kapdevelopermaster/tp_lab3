@@ -39,4 +39,26 @@ public class TrainingModel
         return data;
     }
 
+    public List<double> ExtrapolateData(List<double> data, int days)
+    {
+        var extrapolatedData = new List<double>(data);
+        for (int i = 0; i < days; i++)
+        {
+            double sum = 0;
+            int count = 0;
+            for (int j = Math.Max(0, extrapolatedData.Count - days); j < extrapolatedData.Count; j++)
+            {
+                sum += extrapolatedData[j];
+                count++;
+            }
+            extrapolatedData.Add(sum / count);
+        }
+        return extrapolatedData;
+    }
+
+    public double CalculateTotalWeekendDistance(List<TrainingData> data)
+    {
+        return data.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Saturday || d.StartTime.DayOfWeek == DayOfWeek.Sunday)
+                   .Sum(d => d.Distance);
+    }
 }
